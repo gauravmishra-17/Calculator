@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './grid.dart';
 
 class Screen extends StatelessWidget {
   @override
@@ -7,101 +8,24 @@ class Screen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        Container(),
+        Flexible(
+          flex: 3,
+          child: Container(
+            color: Colors.black38,
+          ),
+        ),
         Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    FlatButton(
-                      child: Text("0"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("AC"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("x"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("%"),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    FlatButton(
-                      child: Text("7"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("8"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("9"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("+"),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    FlatButton(
-                      child: Text("4"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("5"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("6"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("-"),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    FlatButton(
-                      child: Text("1"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("2"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("3"),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text("="),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withOpacity(1),
+                spreadRadius: 5,
+                blurRadius: 20,
+                offset: Offset(0, 7), // changes position of shadow
               ),
             ],
           ),
+          child: Grid(),
         ),
       ],
     );
