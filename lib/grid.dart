@@ -4,13 +4,15 @@ import './Buttons.dart';
 class Grid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    bool orient = MediaQuery.of(context).orientation == Orientation.landscape;
+
     // TODO: implement build
     return GridView(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4,
-        childAspectRatio: 1,
-        crossAxisSpacing: 2,
+        crossAxisSpacing: 10,
         mainAxisSpacing: 2,
+        childAspectRatio: orient == true ? 5 : 1,
       ),
       children: <Widget>[
         Buttons("clear"),
@@ -34,7 +36,6 @@ class Grid extends StatelessWidget {
         Buttons("0"),
         Buttons(","),
       ],
-      scrollDirection: Axis.vertical,
       shrinkWrap: true,
     );
   }
