@@ -13,7 +13,7 @@ class Screen extends StatelessWidget {
           flex: orient == true ? 2 : 1,
           child: Container(
             color: Colors.black38,
-            child: Calculation(" "),
+            child: Calculation("0 "),
           ),
         ),
         Flexible(

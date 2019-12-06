@@ -3,7 +3,6 @@ import './Calculation.dart';
 
 class Buttons extends StatefulWidget {
   Calculation c = new Calculation("0");
-
   String operation;
   Buttons(String operation) {
     this.operation = operation;
@@ -26,8 +25,11 @@ class _Buttons extends State<Buttons> {
       textColor: Colors.white,
       color: Colors.black,
       onPressed: () {
-        Calculation(widget.operation);
-        print("presed button" + widget.operation);
+         print("presed button" + widget.operation);
+        return Column(
+          children: <Widget>[Calculation(widget.operation)],
+        );
+       
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       highlightColor: Colors.black,
