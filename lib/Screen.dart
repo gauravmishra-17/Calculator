@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './grid.dart';
+import './Calculation.dart';
 
 class Screen extends StatelessWidget {
   @override
@@ -8,14 +9,15 @@ class Screen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        Flexible(
-          flex: orient == true ? 3 : 1,
+        Expanded(
+          flex: orient == true ? 2 : 1,
           child: Container(
             color: Colors.black38,
+            child: Calculation(" "),
           ),
         ),
         Flexible(
-          flex: orient == true ? 2 : 0,
+          flex: orient == true ? 3 : 0,
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(

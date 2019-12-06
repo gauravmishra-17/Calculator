@@ -12,7 +12,7 @@ class Grid extends StatelessWidget {
         crossAxisCount: 4,
         crossAxisSpacing: 10,
         mainAxisSpacing: 2,
-        childAspectRatio: orient == true ? 5 : 1,
+        childAspectRatio: orient == true ?  5 : 1,
       ),
       children: <Widget>[
         Buttons("clear"),
