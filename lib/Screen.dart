@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import './grid.dart';
-import './Calculation.dart';
 
-class Screen extends StatelessWidget {
+class Screen extends StatefulWidget {
+  @override
+  _ScreenState createState() => _ScreenState();
+}
+
+class _ScreenState extends State<Screen> {
+  String currentValue = "";
   @override
   Widget build(BuildContext context) {
     bool orient = MediaQuery.of(context).orientation == Orientation.landscape;
@@ -13,7 +18,10 @@ class Screen extends StatelessWidget {
           flex: orient == true ? 2 : 1,
           child: Container(
             color: Colors.black38,
-            child: Calculation("0 "),
+            child: Text(
+              currentValue,
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ),
         Flexible(
@@ -30,10 +38,16 @@ class Screen extends StatelessWidget {
                 ),
               ],
             ),
-            child: Grid(),
+            child: ButtonsContainer(_updateText),
           ),
         ),
       ],
     );
+  }
+
+  void _updateText(String value) {
+    setState(() {
+      currentValue = currentValue +value;
+    });
   }
 }
