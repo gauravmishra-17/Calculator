@@ -21,3 +21,6 @@ class _Buttons extends State<Buttons> {
     );
   }
 }
+ // String newSymbol = (symbol == "+")
+        // ? "-"
+        // : (symbol == "-") ? "+" : (symbol == "x") ? "/" : "x";
